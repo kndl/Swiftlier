@@ -16,7 +16,7 @@ public enum AppIdiom {
 extension UIDevice {
     public var appIdiom: AppIdiom {
         switch self.userInterfaceIdiom {
-        case .pad, .tv, .carPlay, .unspecified:
+        case .pad, .tv, .carPlay, .unspecified, .mac:
             return .pad
         case .phone:
             return .phone
