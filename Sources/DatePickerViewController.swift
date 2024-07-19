@@ -38,7 +38,12 @@ public class ChooseDateViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.white
+        if #available(iOS 13.0, *) {
+            self.view.backgroundColor = UIColor.systemBackground
+        } else {
+//            System color doesn't exist
+            self.view.backgroundColor = UIColor.white
+        }
 
         self.datePickerView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.datePickerView)
